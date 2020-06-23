@@ -14,7 +14,14 @@ class XMLJSONConverter:
         input_file_data = input_file_object.read()
         # print(input_file_data)
         file_data_json = json.loads(input_file_data)
-        print(file_data_json)  # just to check the data
+        # print(file_data_json)  # just to check the data
+        if file_data_json == dict:
+            output_file_object.write('<object>')
+            for key, val in file_data_json.items():
+                self.ischeck(key, val, output_file_object)
+            output_file_object.write('</object>')
+        else:
+            self.ischeck(" ", file_data_json, output_file_object)
 
     def ischeck(self, key, value, output_file_object)
        if value == ' ':
@@ -57,7 +64,7 @@ class XMLJSONConverter:
                         self.ischeck(key, value,output_file_object)
                 output_file_object.write('</array>')
         elif type(value) == dict:
-            new_k,new_v = value.split(':')
-            output_file_object.write('<object name\"'+ str(key) +  '\">')
-            self.ischeck(new_k.strip(),new_v.strip(),output_file_object)
-            output_file_object.write('</object>')
+            for new_k,new_v in value.items() # this won't work beacuse it also contains braces
+                output_file_object.write('<object name\"'+ str(key) +  '\">')
+                self.ischeck(new_k.strip(),new_v.strip(),output_file_object)
+                output_file_object.write('</object>')
