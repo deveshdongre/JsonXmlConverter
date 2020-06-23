@@ -1,1 +1,28 @@
-<null/>
+<object>
+    <object name"organization">
+        <string name="name" >RiskSense</string>
+        <string name="type" >Inc</string>
+        <number name="building_number" >4</number>
+        <number name="floating" >-17.4</number>
+        <null name="null_test"/>
+    </object>
+    <boolean name="security_related" >True</boolean>
+    <array name="array_example0" >
+        <string name="array_example0" >red</string>
+        <string name="array_example0" >green</string>
+        <string name="array_example0" >blue</string>
+        <string name="array_example0" >black</string>
+    </array>
+    <array name="array_example1" >
+        <number name="array_example1" >1</number>
+        <string name="array_example1" >red</string>
+        <array name="array_example1" >
+            <object name"array_example1">
+                <boolean name="nested" >True</boolean>
+            </object>
+        </array>
+        <object name"array_example1">
+            <boolean name="obj" >False</boolean>
+        </object>
+    </array>
+</object>
