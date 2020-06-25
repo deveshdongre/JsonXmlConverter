@@ -17,15 +17,7 @@ class XMLJSONConverter:
         print(file_data_json)  # just to check the data
         self.ischeck(None, file_data_json, output_file_object)
 
-        # if isinstance(file_data_json, dict):
-        #     output_file_object.write('<object>')
-        #     for key, val in file_data_json.items():
-        #         self.ischeck(key, val, output_file_object)
-        #     output_file_object.write('</object>')
-        # else:
-        #     a = " "
-        #     self.ischeck(a, file_data_json, output_file_object)
-        #output = self.convert(file_data_json)
+       
 
     def convert(data, key):
         pass
